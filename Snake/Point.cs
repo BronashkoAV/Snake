@@ -43,11 +43,11 @@ namespace Snake
             }
             if (direction == Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             if (direction == Direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
 
