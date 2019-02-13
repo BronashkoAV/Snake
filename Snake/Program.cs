@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -14,10 +15,10 @@ namespace Snake
             Console.SetBufferSize(width = Console.WindowWidth, height = Console.WindowHeight);
 
             //Отрисовка рамки
-            HorizontalLine upLine = new HorizontalLine(0, width-1, 1, '+');
-            HorizontalLine downLine = new HorizontalLine(0, width-1, height-2, '+');
-            VerticalLine leftLine = new VerticalLine(0, 1, height-3, '+');
-            VerticalLine rightLine = new VerticalLine(width-1, 1, height-3, '+');
+            HorizontalLine upLine = new HorizontalLine(0, width - 1, 1, '+');
+            HorizontalLine downLine = new HorizontalLine(0, width - 1, height - 2, '+');
+            VerticalLine leftLine = new VerticalLine(0, 1, height - 3, '+');
+            VerticalLine rightLine = new VerticalLine(width - 1, 1, height - 3, '+');
 
             upLine.Draw();
             downLine.Draw();
@@ -29,6 +30,15 @@ namespace Snake
 
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
+
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
 
             Console.ReadKey();
         }
